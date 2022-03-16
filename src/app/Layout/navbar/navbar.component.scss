@@ -12,6 +12,11 @@
   a{
     text-decoration: none;
   }
+  a.active{
+    background: #5f59fb;
+    padding: 15px 20px!important;
+    border-radius: 33px;
+  }
   .container {
     display: flex;
     flex-direction: row;
@@ -61,6 +66,10 @@
 
 @include responsive("large") {
   .navbar {
+    a.active{
+    padding: 10px 20px;
+    border-radius: 0;
+    }
     .content {
       position: relative;
       padding: 5px 15px !important;

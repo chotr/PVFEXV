@@ -231,9 +231,11 @@ export class SheduleComponent implements OnInit, AfterViewInit {
     const select2 = document.getElementById('list_l') as HTMLElement;
     const select3 = document.getElementById('list_r') as HTMLElement;
     const select4 = document.getElementById('app-search') as HTMLElement;
+    const select5 = document.getElementById('schedule') as HTMLElement;
     this.route.queryParams.subscribe((params) => {
       this.textURL = params;
     });
+    select5.classList.toggle('active')
     console.log(this.textURL.from);
     if (this.textURL.from !== undefined) {
       select.style.display = 'none';
