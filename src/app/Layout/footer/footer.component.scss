@@ -1,0 +1,85 @@
+@import "../../../sass/Base/customize";
+@import "../../../sass/Helper/mixin";
+@import "../../../sass/Helper/variables";
+@import "../../../sass/Components/button";
+
+footer {
+  z-index: 998;
+  .contact {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 180px;
+    padding-bottom: $pd-3;
+
+    .item {
+      display: flex;
+      flex-direction: row;
+      align-content: center;
+      align-items: center;
+      .icon {
+        padding: 0 $pd-0;
+      }
+      .line {
+        border: 1px solid black;
+        width: 40px;
+        background: black;
+        margin-bottom: 5px;
+      }
+      .text {
+        padding-bottom: $pd-0;
+        margin-right: $mg-1;
+      }
+    }
+    .left {
+      margin-right: $mg-2;
+    }
+  }
+}
+
+@include responsive("medium") {
+  footer {
+    .contact {
+      font-size: 12px;
+      height: 200px;
+      .item {
+        .icon {
+          padding: 0 1px;
+        }
+        .text {
+          margin-right: 0;
+        }
+        .line {
+          width: 25px;
+          margin: 0 3px;
+        }
+      }
+    }
+  }
+}
+
+@include responsive("small") {
+  footer {
+    .contact {
+      font-size: 12px;
+      height: 200px;
+      .contact-left {
+        flex-direction: column;
+      }
+      .left {
+        margin-right: 10px;
+      }
+      .item {
+        .icon {
+          padding: 0 5px;
+        }
+        .text {
+          margin-right: 15px;
+        }
+        .line {
+          display: none;
+        }
+      }
+    }
+  }
+}
