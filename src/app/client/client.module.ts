@@ -15,6 +15,7 @@ const routes = [
     component: ClientComponent,
     children: [
       {
+
         path: 'home',
         component: HomeComponent,
       },
@@ -25,6 +26,10 @@ const routes = [
       {
         path: 'schedule/:id',
         component: SheduleComponent,
+      },
+      {
+        path: '',
+        component: HomeComponent,
       },
     ],
   },
