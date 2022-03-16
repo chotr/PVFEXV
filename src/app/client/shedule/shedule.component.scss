@@ -60,19 +60,21 @@
     position: absolute;
     width: 100%;
     left: 0;
-    top: 30%;
+    top: 70%;
     z-index: 800;
   }
   .fade {
     position: absolute;
     content: "";
     width: 100%;
-    height: 100vh;
+    height: 175vh;
     z-index: 700;
     background: #000000bd;
     display: none;
   }
   .list_flight {
+    min-height: 580px;
+    display: flex;
     margin-top: 10px;
     .text_filter {
       margin-right: 10px;
@@ -106,6 +108,8 @@
   }
   .list_flight_left {
     width: 75%;
+    display: none;
+    flex-direction: column;
     .list_f_c_inner {
       flex-direction: row;
       justify-content: space-between;
@@ -196,6 +200,7 @@
     .collape {
       .title {
         font-weight: 500;
+        padding-bottom: 15px;
       }
       .nav-bar {
         text-transform: uppercase;
@@ -271,6 +276,7 @@
   }
   .list_flight_right {
     width: 25%;
+    display: none;
   }
   .bill {
     margin-left: 10px;
@@ -367,7 +373,6 @@
     font-size: 12px;
   }
   .title {
-    padding-bottom: 15px;
     .place_i {
       flex-direction: column;
     }
@@ -415,11 +420,26 @@
       background: black;
     }
   }
-
+  .display {
+    display: none;
+  }
+  #nullSearch {
+    h3 {
+      margin-bottom: 0;
+      font-size: 25px;
+      color: #f06336;
+      text-align: center;
+    }
+  }
 }
 
 @include responsive("mobile") {
   .shedule {
+    .title {
+      .logo {
+        width: 20%;
+      }
+    }
     .display {
       flex-direction: column;
     }
@@ -449,6 +469,9 @@
       width: 100%;
       max-height: 500px;
       overflow-x: auto;
+      .line {
+        margin: 0 1px;
+      }
       .list_f_c {
         padding: 5px;
       }
@@ -457,6 +480,13 @@
       }
       .time {
         display: none;
+      }
+      .collapse-modal {
+        .info_p {
+          .line_ver {
+            padding-bottom: 30px;
+          }
+        }
       }
     }
     .list_flight_right {
@@ -481,6 +511,43 @@
     }
     .bill {
       margin-left: 0;
+    }
+    .info_fli {
+      padding: 10px 5px;
+      span {
+        font-size: 13px;
+      }
+    }
+    .trip {
+      display: flex;
+      flex-direction: column;
+    }
+    .pd-30 {
+      padding-bottom: 30px;
+    }
+  }
+}
+@media only screen and (max-width: 391px) {
+  .shedule {
+    .list_flight_left {
+      .price {
+        width: 35%;
+      }
+    }
+    #nullSearch{
+      h3{
+        font-size: 21px;
+        padding-left: 30px;
+      }
+    }
+  }
+}
+@include responsive("small-mobile") {
+  .shedule {
+    .list_flight_left {
+      .price {
+        width: 35%;
+      }
     }
   }
 }

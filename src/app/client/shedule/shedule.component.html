@@ -3,7 +3,7 @@
     <div class="w-100">
         <div class="search">
             <div class="container d-flex">
-                <div class="w-80 display d-flex">
+                <div class="w-80 display d-flex" id="display">
                     <div class="place relative d-flex w-50">
                         <div class="from place-item w-40 d-flex">
                             <span class="name">{{nameFrom}}({{idFrom}})</span>
@@ -34,6 +34,9 @@
                         <div class="type"><span>Business Class</span></div>
                     </div>
                 </div>
+                <div class="w-80" id="nullSearch">
+                    <h3>Please choose your flight</h3>
+                </div>
                 <div class="w-20 s_m_c d-flex">
                     <button class="btn-change" id="btn-change">Change Flights
                         <span>
@@ -45,7 +48,7 @@
                             </svg>
                         </span>
                     </button>
-                    <div class="app-search">
+                    <div class="app-search" id="app-search">
                         <div class="search-modal relative hide" id="search-modal">
                             <app-search></app-search>
                         </div>
@@ -54,7 +57,7 @@
             </div>
         </div>
         <div class="list_flight container d-flex" id="list_flight">
-            <div class="list_flight_left">
+            <div class="list_flight_left" id="list_l">
                 <div class="filter d-flex">
                     <span class="text_filter item-filter">FILTER</span>
                     <div class="filter_1 item-filter">
@@ -222,7 +225,7 @@
                                             <span>You Pay</span>
                                         </div>
                                         <div class="w-50 column">
-                                            <span style="font-weight: 500;">{{formatCur(item.fee)}} vnd</span>
+                                            <span style="font-weight: 500;" class="pd-30">{{formatCur(item.fee)}} vnd</span>
                                             <span>included</span>
                                             <span>{{formatCur(item.fee)}} vnd</span>
                                             <span class="save save_n">-{{formatCur(item.feeCount)}} vnd</span>
@@ -295,7 +298,7 @@
                     </div>
                 </ng-container>
             </div>
-            <div class="list_flight_right">
+            <div class="list_flight_right" id="list_r">
                 <div class="bill">
                     <div class="title">
                         <h3>your flights</h3>

@@ -226,13 +226,21 @@ export class SheduleComponent implements OnInit, AfterViewInit {
     (document.getElementById('contact') as HTMLElement).style.height = '70px';
     (document.getElementById('footer') as HTMLElement).style.background =
       '#f4f2f9';
-    const select = document.getElementById('list_flight') as HTMLElement;
+    const select = document.getElementById('nullSearch') as HTMLElement;
+    const select1 = document.getElementById('display') as HTMLElement;
+    const select2 = document.getElementById('list_l') as HTMLElement;
+    const select3 = document.getElementById('list_r') as HTMLElement;
+    const select4 = document.getElementById('app-search') as HTMLElement;
     this.route.queryParams.subscribe((params) => {
       this.textURL = params;
     });
-    if (this.textURL === {}) {
+    console.log(this.textURL.from);
+    if (this.textURL.from !== undefined) {
       select.style.display = 'none';
-      console.log('null');
+      select1.style.display = 'flex';
+      select2.style.display = 'flex';
+      select3.style.display = 'block';
+      select4.style.top = '30%';
     }
     this.toggleModal();
     this.getInFoFlight();
@@ -278,11 +286,11 @@ export class SheduleComponent implements OnInit, AfterViewInit {
     // console.log(this.dateFrom);
   }
   replaceSpace(text: string): string {
-    console.log(text)
+    console.log(text);
     let string = '';
     if (text === 'undefined') {
       return '';
-    } else {  
+    } else {
       for (let index = 0; index < text.length; index++) {
         const element = text[index];
         if (index === 6) {

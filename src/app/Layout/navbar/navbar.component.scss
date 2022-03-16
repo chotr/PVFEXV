@@ -9,6 +9,9 @@
   left: 0;
   right: 0;
   z-index: 999;
+  a{
+    text-decoration: none;
+  }
   .container {
     display: flex;
     flex-direction: row;
